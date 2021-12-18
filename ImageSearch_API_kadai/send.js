@@ -13,8 +13,34 @@ const sendAction = (handleChangeImageState, param, query) => {
     return;
   }
 
-  // ここに処理を記述
+//  ここに処理を記述
+  $.ajax({
+    url: END_POINT,
+    type: 'POST',
+    crossDomain: true,
+    dataType: 'json',
+    data: encodeURI('apikey=' + API_KEY + '&query=' + $('#search-text').val()),
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    timeout: 5000,
+    xhrFields: {
+      withCredentials: true
+    },
+  }).done(function (data, textStatus, jqXHR) {
+    console.log(data.results[0]['img']);
+    // messageLists.push(data.results[0]['img']);
+    // kindLists.push(!IS_SEND);
+  });
 
+  $('#send_btn').on('click', function () {
+    sendAction();
+  })
+
+  $('#send_message').keypress(function (e) {
+    if (e.which == 13) {
+      sendAction();
+    }
+    return false;
+  })
 };
 
 window.sendAction = sendAction;

@@ -14,6 +14,7 @@ const sendAction = (handleChangeImageState, param, query) => {
   }
 
 //  ここに処理を記述
+const imageLists = [];
   $.ajax({
     url: END_POINT,
     type: 'GET',
@@ -26,19 +27,16 @@ const sendAction = (handleChangeImageState, param, query) => {
       withCredentials: true
     },
   }).done(function (data, textStatus, jqXHR) {
-    console.log(data.result['img']);
+    // ここでImageContainerにpropsを渡す
+    imageLists.push(data.result['img']);
+    ImageContainer(imageLists);
   });
+
 
   $('#send_btn').on('click', function () {
     sendAction();
   })
 
-  $('#send_message').keypress(function (e) {
-    if (e.which == 13) {
-      sendAction();
-    }
-    return false;
-  })
 };
 
 window.sendAction = sendAction;

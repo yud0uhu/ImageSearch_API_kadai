@@ -17,11 +17,14 @@ const Form = (props) => {
           placeholder="最大50文字"
           style={inputStyle}
         />
-        <a
+        <button
+          id="form-button"
+          onClick = {sendAction}
+          type= "button"
           style={buttonStyle}
         >
           {displayText}
-        </a>
+        </button>
       </form>
     </div>
   );
@@ -36,7 +39,6 @@ const boxStyle = {
 const formStyle = {
   width: '500px',
   height: '100%',
-  margin: '0',
   display: 'inline-flex',
   justifyContent: 'flex-start',
 };

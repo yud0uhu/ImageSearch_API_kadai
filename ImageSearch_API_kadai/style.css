@@ -45,3 +45,7 @@ img.a3rt_logo {
   line-height: 2em;
   padding-left: 8px;
 }
+
+#form-button:hover {
+  cursor: pointer;
+}

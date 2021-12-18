@@ -29,16 +29,16 @@ const Form = (props) => {
 
 // 各スタイルの定義
 const boxStyle = {
-  margin: '0 auto',
+  margin: '18px 0px 0px 90px',
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'flex-start',
 };
 const formStyle = {
   width: '500px',
   height: '100%',
-  margin: '10px auto',
+  margin: '0',
   display: 'inline-flex',
-  justifyContent: 'center',
+  justifyContent: 'flex-start',
 };
 const inputStyle = {
   height: '45px',
@@ -47,11 +47,11 @@ const inputStyle = {
   fontSize: '16px',
 };
 const buttonStyle = {
-  width: '100px',
+  width: '85px',
   marginLeft: '10px',
   textAlign: 'center',
   color: '#fff',
-  background: '#5876a3',
+  background: '#2577bd',
   padding: '10px 5%',
   display: 'inline-block',
   borderRadius: '5px',

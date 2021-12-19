@@ -9,7 +9,7 @@ const ImageContainer = (props) => {
 
   // createImageElementは20回呼ばれる
   // imageElementListにはいる
-  
+
   // 20個の画像が入ったDOM要素がimageElementList
   // ここで最終的なDOMをreturnする
 
@@ -32,8 +32,8 @@ const createImageElement = (image, index, action) => {
 
 // 画像コンテナのスタイル
 const containerStyle = {
-  width: '1400px',
-  height: '280px',
+  width: '100%',
+  height: '210px',
   margin: '0 auto',
   display: 'flex',
   flexWrap: 'wrap',
@@ -42,11 +42,12 @@ const containerStyle = {
 };
 
 // 画像を囲うpタグのスタイル
+// (<p> → <figure>)
 const boxStyle = {
   width: '10%',
   height: '50%',
   margin: 0,
-  padding: '1px',
+  padding: '1px'
 };
 
 window.ImageContainer = ImageContainer;

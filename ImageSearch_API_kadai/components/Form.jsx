@@ -5,7 +5,7 @@ const Form = (props) => {
 
   // ========== TODO: 画面へ描画する文字列とメソッドを定義 ==========
   // existsImageを用いて、画像が表示されている場合はdisplayText = 'クリア'・action = onClearを割り当てる
-  
+
   const displayText = '検索';
   // const displayText = existsImage ? '検索' : 'クリア';
   const action = onSearch;
@@ -37,7 +37,7 @@ const Form = (props) => {
 
 // 各スタイルの定義
 const boxStyle = {
-  margin: '18px 0px 0px 90px',
+  margin: '18px 0px 20px 90px',
   display: 'flex',
   justifyContent: 'flex-start',
 };
@@ -49,18 +49,18 @@ const formStyle = {
 const inputStyle = {
   height: '45px',
   paddingLeft: '5px',
-  borderRadius: '3px',
+  borderRadius: '100px',
   fontSize: '16px',
 };
 const buttonStyle = {
-  width: '85px',
+  width: '100px',
   marginLeft: '10px',
   textAlign: 'center',
   color: '#fff',
   background: '#2577bd',
   padding: '10px 5%',
   display: 'inline-block',
-  borderRadius: '5px',
+  borderRadius: '50px',
   textDecoration: 'none',
 };
 

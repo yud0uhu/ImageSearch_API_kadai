@@ -1,5 +1,6 @@
 // 検索フォームコンポーネント
 const Form = (props) => {
+  // この順番でpropsを渡してあげる必要がある
   const { onSearch, onChange, onClear, existsImage } = props;
 
   // ========== TODO: 画面へ描画する文字列とメソッドを定義 ==========
@@ -14,12 +15,13 @@ const Form = (props) => {
         <input
           id="search-text"
           type="text"
+          onChange = {onChange}
           placeholder="最大50文字"
           style={inputStyle}
         />
         <button
           id="form-button"
-          onClick = {sendAction}
+          onClick = {onSearch}
           type= "button"
           style={buttonStyle}
         >

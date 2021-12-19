@@ -14,7 +14,7 @@ const ImageContainer = (props) => {
   // ここで最終的なDOMをreturnする
 
   // const imageElementList = imageList.map(image=>createImageElement(image,imageList[0]));
-  const imageElementList = imageList.map(( image,index ) => 
+  const imageElementList = imageList.map(( image,index ) =>
     createImageElement(image, index, action)
   );
   return <div style={containerStyle}>{imageElementList}</div>;
@@ -22,11 +22,12 @@ const ImageContainer = (props) => {
 
 // ========== TODO: 画像情報からImageComponentを定義して返却する処理 ==========
 // pタグ内部のImageComponentに適切なpropsを渡す
+// pタグ → figureタグに変更
 const createImageElement = (image, index, action) => {
   return (
-    <p style={boxStyle} key={index}>
+    <figure style={boxStyle} key={index}>
       <ImageComponent key={index} url={image.url} name={image.file_name} imageId={image.id} imageAction={action}/>
-    </p>
+    </figure>
   );
 };
 

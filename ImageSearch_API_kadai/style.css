@@ -58,6 +58,7 @@ img.a3rt_logo {
 }
 /* ヘッダーより下のコンテンツを真ん中に寄せる */
 
+figure:hover,
 #form-button:hover {
   cursor: pointer;
 }

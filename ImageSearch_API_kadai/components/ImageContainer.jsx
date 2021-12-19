@@ -9,12 +9,12 @@ const ImageContainer = (props) => {
 
   // createImageElementは20回呼ばれる
   // imageElementListにはいる
-  
+
   // 20個の画像が入ったDOM要素がimageElementList
   // ここで最終的なDOMをreturnする
 
   // const imageElementList = imageList.map(image=>createImageElement(image,imageList[0]));
-  const imageElementList = imageList.map(( image,index ) => 
+  const imageElementList = imageList.map(( image,index ) =>
     createImageElement(image, index)
   );
   return <div style={containerStyle}>{imageElementList}</div>;
@@ -22,18 +22,19 @@ const ImageContainer = (props) => {
 
 // ========== TODO: 画像情報からImageComponentを定義して返却する処理 ==========
 // pタグ内部のImageComponentに適切なpropsを渡す
+// pタグ → figureタグに変更
 const createImageElement = (image, index) => {
   return (
-    <p style={boxStyle} key={index}>
+    <figure style={boxStyle} key={index}>
       <ImageComponent key={index} url={image.url} name={image.file_name} imageId={image.id} />
-    </p>
+    </figure>
   );
 };
 
 // 画像コンテナのスタイル
 const containerStyle = {
-  width: '1400px',
-  height: '280px',
+  width: '100%',
+  height: '210px',
   margin: '0 auto',
   display: 'flex',
   flexWrap: 'wrap',
@@ -42,11 +43,12 @@ const containerStyle = {
 };
 
 // 画像を囲うpタグのスタイル
+// (<p> → <figure>)
 const boxStyle = {
   width: '10%',
   height: '50%',
   margin: 0,
-  padding: '1px',
+  padding: '1px'
 };
 
 window.ImageContainer = ImageContainer;

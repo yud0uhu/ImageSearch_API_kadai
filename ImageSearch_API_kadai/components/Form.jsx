@@ -34,7 +34,7 @@ const Form = (props) => {
 
 // 各スタイルの定義
 const boxStyle = {
-  margin: '18px 0px 0px 90px',
+  margin: '18px 0px 20px 90px',
   display: 'flex',
   justifyContent: 'flex-start',
 };
@@ -46,7 +46,7 @@ const formStyle = {
 const inputStyle = {
   height: '45px',
   paddingLeft: '5px',
-  borderRadius: '3px',
+  borderRadius: '100px',
   fontSize: '16px',
 };
 const buttonStyle = {
@@ -57,7 +57,7 @@ const buttonStyle = {
   background: '#2577bd',
   padding: '10px 5%',
   display: 'inline-block',
-  borderRadius: '5px',
+  borderRadius: '50px',
   textDecoration: 'none',
 };
 

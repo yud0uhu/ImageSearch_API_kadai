@@ -6,10 +6,10 @@ const Form = (props) => {
   // ========== TODO: 画面へ描画する文字列とメソッドを定義 ==========
   // existsImageを用いて、画像が表示されている場合はdisplayText = 'クリア'・action = onClearを割り当てる
   
-  // const displayText = '検索';
-  const displayText = existsImage ? '検索' : 'クリア';
-  // const action = onSearch;
-  const action = existsImage? onSearch : onClear;
+  const displayText = '検索';
+  // const displayText = existsImage ? '検索' : 'クリア';
+  const action = onSearch;
+  // const action = existsImage? onSearch : onClear;
 
   // ========== TODO: onChange / onClick時の処理を記述する ==========
   return (
@@ -24,11 +24,11 @@ const Form = (props) => {
         />
         <button
           id="form-button"
-          onClick = {action}
+          onClick = {existsImage ? action : onClear}
           type= "button"
           style={buttonStyle}
         >
-          {displayText}
+          {existsImage ? displayText : 'クリア'}
         </button>
       </form>
     </div>

@@ -44,7 +44,7 @@ const App = () => {
 　// 関数そのものに渡す
   return (
     <React.Fragment>
-      <Form onSearch={handleSearch} onChange={handleChange} onClear={handleClear} />
+      <Form onSearch={handleSearch} onChange={handleChange} onClear={handleClear} existsImage={imageContainer.length===0}/>
       {imageContainer.map((imageList, index) => (
         <ImageContainer
           imageList={imageList}

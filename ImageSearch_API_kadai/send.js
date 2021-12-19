@@ -28,10 +28,10 @@ const sendAction = (handleChangeImageState, param, query) => {
   }).done(function (data) {
     // ここでImageContainerにpropsを渡す
     // handleChangeImageState()
-    handleChangeImageState = () => {
-      sendAction(handleChangeImageState, END_POINT_SUFFIX_TEXT, searchText);
-    };
-    ImageContainer(data.result['img']);
+    
+    // App.jsに渡すことができれば再度レンダリングされる仕組みになっている
+    handleChangeImageState(data.result['img'])
+    console.log(data.result['img'])
   });
 
 };

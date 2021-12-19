@@ -1,6 +1,7 @@
 // 画像コンポーネント
 const ImageComponent = (props) => {
   const { url, name, imageId } = props;
+  console.log(imageId)
 
   return (
     <img

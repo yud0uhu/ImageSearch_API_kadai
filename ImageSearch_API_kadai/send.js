@@ -15,7 +15,7 @@ const sendAction = (handleChangeImageState, param, query) => {
 
 //  ここに処理を記述
   $.ajax({
-    url: END_POINT + 'search_by_text',
+    url: END_POINT + param,
     type: 'GET',
     crossDomain: true,
     dataType: 'json',

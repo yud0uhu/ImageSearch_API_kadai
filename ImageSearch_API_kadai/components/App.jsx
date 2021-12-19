@@ -14,14 +14,20 @@ const App = () => {
 
   // ========== TODO: フォームの入力欄とimageContainer変数を初期化する処理 ==========
   // imageContainer変数はsetImageContainer()を使用する
+  
   const handleClear = () => {
     // ここに処理を記述
+    // Idをもとに空の配列をもってきてフォームを初期化する
+    setImageContainer([]);
   };
 
   // ========== TODO: searchTextを更新する処理（フォームへ入力された文字列を格納） ==========
   // setSearchText()を使用する
-  const handleChange = () => {
+  // eventにはonClickなども入る、Inputであれば要素の中身が入る
+  const handleChange = (event) => {
     // ここに処理を記述
+    const newSearchText = event.target.value;
+    setSearchText(newSearchText);
   };
 
   // フォームへ入力された文字列によるsend.jsのsendAction()実行処理
@@ -35,9 +41,10 @@ const App = () => {
 
   // ========== TODO: 画面へレンダリングする要素を定義 ==========
   // Formコンポーネントに適切なpropsを渡す
+　// 関数そのものに渡す
   return (
     <React.Fragment>
-      <Form />
+      <Form onSearch={handleSearch} onChange={handleChange} onClear={handleClear} />
       {imageContainer.map((imageList, index) => (
         <ImageContainer
           imageList={imageList}

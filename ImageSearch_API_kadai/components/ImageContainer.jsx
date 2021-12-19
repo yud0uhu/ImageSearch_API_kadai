@@ -1,6 +1,6 @@
 // 画像表示コンテナコンポーネント
 const ImageContainer = (props) => {
-  const {imageList} = props;
+  const {imageList , action} = props;
   console.log(imageList)
 
   // ========== TODO: createImageElement()を実行してImageComponentの配列をimageElementListへ格納する処理（※一旦空の配列を代入しているので正しい値を代入して下さい） ==========
@@ -15,17 +15,17 @@ const ImageContainer = (props) => {
 
   // const imageElementList = imageList.map(image=>createImageElement(image,imageList[0]));
   const imageElementList = imageList.map(( image,index ) => 
-    createImageElement(image, index)
+    createImageElement(image, index, action)
   );
   return <div style={containerStyle}>{imageElementList}</div>;
 };
 
 // ========== TODO: 画像情報からImageComponentを定義して返却する処理 ==========
 // pタグ内部のImageComponentに適切なpropsを渡す
-const createImageElement = (image, index) => {
+const createImageElement = (image, index, action) => {
   return (
     <p style={boxStyle} key={index}>
-      <ImageComponent key={index} url={image.url} name={image.file_name} imageId={image.id} />
+      <ImageComponent key={index} url={image.url} name={image.file_name} imageId={image.id} imageAction={action}/>
     </p>
   );
 };

@@ -38,6 +38,10 @@ const App = () => {
   // ========== EXTRA_TODO: 画像クリック時の画像IDによるsendAction()実行処理 ==========
   // APIリファレンスの「Search by Image API」を確認し、必要な処理を記述
   // ImageComponentをクリックした時に発火する関数を定義し、その中でsendAction()を実行する ※引数に注意
+  const imageHandleSearch = (searchImage) => {
+    sendAction(handleChangeImageState, END_POINT_SUFFIX_IMAGE, searchImage);
+  };
+
 
   // ========== TODO: 画面へレンダリングする要素を定義 ==========
   // Formコンポーネントに適切なpropsを渡す
@@ -49,6 +53,7 @@ const App = () => {
         <ImageContainer
           imageList={imageList}
           key={index}
+          action={imageHandleSearch}
         />
       ))}
     </React.Fragment>

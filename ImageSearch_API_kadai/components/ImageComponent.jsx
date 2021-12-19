@@ -1,6 +1,6 @@
 // 画像コンポーネント
 const ImageComponent = (props) => {
-  const { url, name, imageId } = props;
+  const { url, name, imageId, imageAction } = props;
   console.log(imageId)
 
   return (
@@ -9,6 +9,7 @@ const ImageComponent = (props) => {
       alt={name}
       title={name}
       imageid={imageId}
+      onClick={imageAction.bind(null,imageId)}
       width="100%"
       height="100%"
     />

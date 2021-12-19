@@ -19,7 +19,7 @@ const sendAction = (handleChangeImageState, param, query) => {
     type: 'GET',
     crossDomain: true,
     dataType: 'json',
-    data: encodeURI('apikey=' + API_KEY + '&query=' + $('#search-text').val()),
+    data: encodeURI('apikey=' + API_KEY + '&query=' + query),
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     timeout: 5000,
     xhrFields: {

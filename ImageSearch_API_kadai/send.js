@@ -3,7 +3,7 @@ const API_KEY = 'DZZ5OX8zgxkD0fpFX3XDh7lGXBDUL1Ms';
 
 // 文字列による検索の場合：search_by_textを末尾に付与
 // 画像IDによる検索の場合：search_by_imageを末尾に付与
-const END_POINT = 'https://api.a3rt.recruit.co.jp/image_search/v1/search_by_image';
+const END_POINT = 'https://api.a3rt.recruit.co.jp/image_search/v1/';
 
 // ========== TODO: 画像データ取得処理 ==========
 // ajax等を用いてリクエストを送信し、成功時はhandleChangeImageState()を呼び出す
@@ -14,9 +14,8 @@ const sendAction = (handleChangeImageState, param, query) => {
   }
 
 //  ここに処理を記述
-const imageLists = [];
   $.ajax({
-    url: END_POINT,
+    url: END_POINT + 'search_by_text',
     type: 'GET',
     crossDomain: true,
     dataType: 'json',
@@ -26,16 +25,14 @@ const imageLists = [];
     xhrFields: {
       withCredentials: true
     },
-  }).done(function (data, textStatus, jqXHR) {
+  }).done(function (data) {
     // ここでImageContainerにpropsを渡す
-    imageLists.push(data.result['img']);
-    ImageContainer(imageLists);
+    // handleChangeImageState()
+    handleChangeImageState = () => {
+      sendAction(handleChangeImageState, END_POINT_SUFFIX_TEXT, searchText);
+    };
+    ImageContainer(data.result['img']);
   });
-
-
-  $('#send_btn').on('click', function () {
-    sendAction();
-  })
 
 };
 

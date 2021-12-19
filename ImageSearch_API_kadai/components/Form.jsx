@@ -5,7 +5,7 @@ const Form = (props) => {
 
   // ========== TODO: 画面へ描画する文字列とメソッドを定義 ==========
   // existsImageを用いて、画像が表示されている場合はdisplayText = 'クリア'・action = onClearを割り当てる
-  
+
   const displayText = '検索';
   // const displayText = existsImage ? '検索' : 'クリア';
   const action = onSearch;
@@ -53,7 +53,7 @@ const inputStyle = {
   fontSize: '16px',
 };
 const buttonStyle = {
-  width: '85px',
+  width: '100px',
   marginLeft: '10px',
   textAlign: 'center',
   color: '#fff',

@@ -20,7 +20,10 @@ body {
   height: 100%;
   width: 100%;
   background-color: #eee;
+  display: flex;
+  flex-direction: column;
 }
+/* flex containerに変更*/
 
 #messages_header {
   padding: 6px;
@@ -28,11 +31,14 @@ body {
   height: 40px;
   background: #ddd;
   border: 1px solid #ccc;
+  display: flex;
+  justify-content: flex-start;
 }
 
 #header_logo {
-  float: left;
+  margin-left: 5px;
 }
+/*ヘッダーのコンテンツの左側に、ほんの少しmargin*/
 
 img.a3rt_logo {
   float: left;
@@ -45,6 +51,12 @@ img.a3rt_logo {
   line-height: 2em;
   padding-left: 8px;
 }
+
+#root {
+  width: 80%;
+  align-self: center;
+}
+/* ヘッダーより下のコンテンツを真ん中に寄せる */
 
 #form-button:hover {
   cursor: pointer;

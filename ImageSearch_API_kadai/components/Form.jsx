@@ -40,7 +40,6 @@ const formStyle = {
   width: '500px',
   height: '100%',
   display: 'inline-flex',
-  justifyContent: 'flex-start',
 };
 const inputStyle = {
   height: '45px',
